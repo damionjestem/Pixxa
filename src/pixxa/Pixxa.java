@@ -8,7 +8,7 @@ import javafx.scene.control.Button;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-public class Pixxa extends Application implements EventHandler<ActionEvent> {
+public class Pixxa extends Application{
 
     Button button;
 
@@ -23,7 +23,7 @@ public class Pixxa extends Application implements EventHandler<ActionEvent> {
         /*You can add text inside brackets of constructor*/
         button = new Button();
         button.setText("Naciśnij mnie");
-        button.setOnAction(this);
+        button.setOnAction(e -> System.out.println("O tak"));
 
         StackPane layout = new StackPane();
         layout.getChildren().add(button);
@@ -31,13 +31,5 @@ public class Pixxa extends Application implements EventHandler<ActionEvent> {
         Scene scene = new Scene(layout, 300, 500); //layout, x, y
         primaryStage.setScene(scene);
         primaryStage.show();
-    }
-
-    @Override
-    public void handle(ActionEvent event) {
-        if (event.getSource()==button) {
-            System.out.println("Tekst testowy, owocowy");
-        }
-        
     }
 }
