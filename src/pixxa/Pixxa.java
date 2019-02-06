@@ -22,7 +22,7 @@ public class Pixxa extends Application {
         window = primaryStage;
 
         Label label1 = new Label("Pixxa - zmixxuj pizzę!");
-        
+
         Button button1 = new Button("Go to scene 2");
         button1.setOnAction(e -> window.setScene(scene2));
 
@@ -31,18 +31,22 @@ public class Pixxa extends Application {
         layout1.getChildren().addAll(label1, button1);
         scene1 = new Scene(layout1, 200, 200);
 
-        //Button 2
-        Button button2 = new Button("Powrót do poprzedniego okna");
-        button2.setOnAction(e -> window.setScene(scene1));
+        //Button2
+        Button button2 = new Button("Uwaga");
+        button2.setOnAction(e -> AlertBox.display("Title", "is this real life?"));
+
+        //Button 3
+        Button button3 = new Button("Powrót do poprzedniego okna");
+        button3.setOnAction(e -> window.setScene(scene1));
 
         //Layout2
         StackPane layout2 = new StackPane();
         layout2.getChildren().add(button2);
         scene2 = new Scene(layout2, 600, 300);
-        
+
         window.setScene(scene1);
         window.setTitle("Tits and pineapple");
         window.show();
-        
+
     }
 }
